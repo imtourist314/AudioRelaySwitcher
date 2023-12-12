@@ -1,0 +1,597 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		28823E552B28214D0059CA93 /* AudioRelaySwitcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823E542B28214D0059CA93 /* AudioRelaySwitcherApp.swift */; };
+		28823E572B28214D0059CA93 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823E562B28214D0059CA93 /* ContentView.swift */; };
+		28823E592B28214E0059CA93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28823E582B28214E0059CA93 /* Assets.xcassets */; };
+		28823E5C2B28214E0059CA93 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28823E5B2B28214E0059CA93 /* Preview Assets.xcassets */; };
+		28823E662B28214E0059CA93 /* AudioRelaySwitcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823E652B28214E0059CA93 /* AudioRelaySwitcherTests.swift */; };
+		28823E702B28214E0059CA93 /* AudioRelaySwitcherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823E6F2B28214E0059CA93 /* AudioRelaySwitcherUITests.swift */; };
+		28823E722B28214E0059CA93 /* AudioRelaySwitcherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823E712B28214E0059CA93 /* AudioRelaySwitcherUITestsLaunchTests.swift */; };
+		28823E812B2823CD0059CA93 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823E802B2823CD0059CA93 /* SettingsView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		28823E622B28214E0059CA93 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28823E492B28214D0059CA93 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 28823E502B28214D0059CA93;
+			remoteInfo = AudioRelaySwitcher;
+		};
+		28823E6C2B28214E0059CA93 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28823E492B28214D0059CA93 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 28823E502B28214D0059CA93;
+			remoteInfo = AudioRelaySwitcher;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		28823E512B28214D0059CA93 /* AudioRelaySwitcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioRelaySwitcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		28823E542B28214D0059CA93 /* AudioRelaySwitcherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRelaySwitcherApp.swift; sourceTree = "<group>"; };
+		28823E562B28214D0059CA93 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		28823E582B28214E0059CA93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		28823E5B2B28214E0059CA93 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		28823E612B28214E0059CA93 /* AudioRelaySwitcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudioRelaySwitcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		28823E652B28214E0059CA93 /* AudioRelaySwitcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRelaySwitcherTests.swift; sourceTree = "<group>"; };
+		28823E6B2B28214E0059CA93 /* AudioRelaySwitcherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudioRelaySwitcherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		28823E6F2B28214E0059CA93 /* AudioRelaySwitcherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRelaySwitcherUITests.swift; sourceTree = "<group>"; };
+		28823E712B28214E0059CA93 /* AudioRelaySwitcherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRelaySwitcherUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		28823E802B2823CD0059CA93 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		28823E4E2B28214D0059CA93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28823E5E2B28214E0059CA93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28823E682B28214E0059CA93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		28823E482B28214D0059CA93 = {
+			isa = PBXGroup;
+			children = (
+				28823E532B28214D0059CA93 /* AudioRelaySwitcher */,
+				28823E642B28214E0059CA93 /* AudioRelaySwitcherTests */,
+				28823E6E2B28214E0059CA93 /* AudioRelaySwitcherUITests */,
+				28823E522B28214D0059CA93 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		28823E522B28214D0059CA93 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				28823E512B28214D0059CA93 /* AudioRelaySwitcher.app */,
+				28823E612B28214E0059CA93 /* AudioRelaySwitcherTests.xctest */,
+				28823E6B2B28214E0059CA93 /* AudioRelaySwitcherUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		28823E532B28214D0059CA93 /* AudioRelaySwitcher */ = {
+			isa = PBXGroup;
+			children = (
+				28823E542B28214D0059CA93 /* AudioRelaySwitcherApp.swift */,
+				28823E562B28214D0059CA93 /* ContentView.swift */,
+				28823E802B2823CD0059CA93 /* SettingsView.swift */,
+				28823E582B28214E0059CA93 /* Assets.xcassets */,
+				28823E5A2B28214E0059CA93 /* Preview Content */,
+			);
+			path = AudioRelaySwitcher;
+			sourceTree = "<group>";
+		};
+		28823E5A2B28214E0059CA93 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				28823E5B2B28214E0059CA93 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		28823E642B28214E0059CA93 /* AudioRelaySwitcherTests */ = {
+			isa = PBXGroup;
+			children = (
+				28823E652B28214E0059CA93 /* AudioRelaySwitcherTests.swift */,
+			);
+			path = AudioRelaySwitcherTests;
+			sourceTree = "<group>";
+		};
+		28823E6E2B28214E0059CA93 /* AudioRelaySwitcherUITests */ = {
+			isa = PBXGroup;
+			children = (
+				28823E6F2B28214E0059CA93 /* AudioRelaySwitcherUITests.swift */,
+				28823E712B28214E0059CA93 /* AudioRelaySwitcherUITestsLaunchTests.swift */,
+			);
+			path = AudioRelaySwitcherUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		28823E502B28214D0059CA93 /* AudioRelaySwitcher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28823E752B28214E0059CA93 /* Build configuration list for PBXNativeTarget "AudioRelaySwitcher" */;
+			buildPhases = (
+				28823E4D2B28214D0059CA93 /* Sources */,
+				28823E4E2B28214D0059CA93 /* Frameworks */,
+				28823E4F2B28214D0059CA93 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AudioRelaySwitcher;
+			productName = AudioRelaySwitcher;
+			productReference = 28823E512B28214D0059CA93 /* AudioRelaySwitcher.app */;
+			productType = "com.apple.product-type.application";
+		};
+		28823E602B28214E0059CA93 /* AudioRelaySwitcherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28823E782B28214E0059CA93 /* Build configuration list for PBXNativeTarget "AudioRelaySwitcherTests" */;
+			buildPhases = (
+				28823E5D2B28214E0059CA93 /* Sources */,
+				28823E5E2B28214E0059CA93 /* Frameworks */,
+				28823E5F2B28214E0059CA93 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				28823E632B28214E0059CA93 /* PBXTargetDependency */,
+			);
+			name = AudioRelaySwitcherTests;
+			productName = AudioRelaySwitcherTests;
+			productReference = 28823E612B28214E0059CA93 /* AudioRelaySwitcherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		28823E6A2B28214E0059CA93 /* AudioRelaySwitcherUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28823E7B2B28214E0059CA93 /* Build configuration list for PBXNativeTarget "AudioRelaySwitcherUITests" */;
+			buildPhases = (
+				28823E672B28214E0059CA93 /* Sources */,
+				28823E682B28214E0059CA93 /* Frameworks */,
+				28823E692B28214E0059CA93 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				28823E6D2B28214E0059CA93 /* PBXTargetDependency */,
+			);
+			name = AudioRelaySwitcherUITests;
+			productName = AudioRelaySwitcherUITests;
+			productReference = 28823E6B2B28214E0059CA93 /* AudioRelaySwitcherUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		28823E492B28214D0059CA93 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					28823E502B28214D0059CA93 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					28823E602B28214E0059CA93 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 28823E502B28214D0059CA93;
+					};
+					28823E6A2B28214E0059CA93 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 28823E502B28214D0059CA93;
+					};
+				};
+			};
+			buildConfigurationList = 28823E4C2B28214D0059CA93 /* Build configuration list for PBXProject "AudioRelaySwitcher" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 28823E482B28214D0059CA93;
+			productRefGroup = 28823E522B28214D0059CA93 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				28823E502B28214D0059CA93 /* AudioRelaySwitcher */,
+				28823E602B28214E0059CA93 /* AudioRelaySwitcherTests */,
+				28823E6A2B28214E0059CA93 /* AudioRelaySwitcherUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		28823E4F2B28214D0059CA93 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28823E5C2B28214E0059CA93 /* Preview Assets.xcassets in Resources */,
+				28823E592B28214E0059CA93 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28823E5F2B28214E0059CA93 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28823E692B28214E0059CA93 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		28823E4D2B28214D0059CA93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28823E812B2823CD0059CA93 /* SettingsView.swift in Sources */,
+				28823E572B28214D0059CA93 /* ContentView.swift in Sources */,
+				28823E552B28214D0059CA93 /* AudioRelaySwitcherApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28823E5D2B28214E0059CA93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28823E662B28214E0059CA93 /* AudioRelaySwitcherTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28823E672B28214E0059CA93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28823E722B28214E0059CA93 /* AudioRelaySwitcherUITestsLaunchTests.swift in Sources */,
+				28823E702B28214E0059CA93 /* AudioRelaySwitcherUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		28823E632B28214E0059CA93 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 28823E502B28214D0059CA93 /* AudioRelaySwitcher */;
+			targetProxy = 28823E622B28214E0059CA93 /* PBXContainerItemProxy */;
+		};
+		28823E6D2B28214E0059CA93 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 28823E502B28214D0059CA93 /* AudioRelaySwitcher */;
+			targetProxy = 28823E6C2B28214E0059CA93 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		28823E732B28214E0059CA93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		28823E742B28214E0059CA93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		28823E762B28214E0059CA93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AudioRelaySwitcher/Preview Content\"";
+				DEVELOPMENT_TEAM = SBXP538J4P;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lambdatech.ca.AudioRelaySwitcher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		28823E772B28214E0059CA93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AudioRelaySwitcher/Preview Content\"";
+				DEVELOPMENT_TEAM = SBXP538J4P;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lambdatech.ca.AudioRelaySwitcher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		28823E792B28214E0059CA93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SBXP538J4P;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lambdatech.ca.AudioRelaySwitcherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AudioRelaySwitcher.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AudioRelaySwitcher";
+			};
+			name = Debug;
+		};
+		28823E7A2B28214E0059CA93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SBXP538J4P;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lambdatech.ca.AudioRelaySwitcherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AudioRelaySwitcher.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AudioRelaySwitcher";
+			};
+			name = Release;
+		};
+		28823E7C2B28214E0059CA93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SBXP538J4P;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lambdatech.ca.AudioRelaySwitcherUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AudioRelaySwitcher;
+			};
+			name = Debug;
+		};
+		28823E7D2B28214E0059CA93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SBXP538J4P;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lambdatech.ca.AudioRelaySwitcherUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AudioRelaySwitcher;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		28823E4C2B28214D0059CA93 /* Build configuration list for PBXProject "AudioRelaySwitcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28823E732B28214E0059CA93 /* Debug */,
+				28823E742B28214E0059CA93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28823E752B28214E0059CA93 /* Build configuration list for PBXNativeTarget "AudioRelaySwitcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28823E762B28214E0059CA93 /* Debug */,
+				28823E772B28214E0059CA93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28823E782B28214E0059CA93 /* Build configuration list for PBXNativeTarget "AudioRelaySwitcherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28823E792B28214E0059CA93 /* Debug */,
+				28823E7A2B28214E0059CA93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28823E7B2B28214E0059CA93 /* Build configuration list for PBXNativeTarget "AudioRelaySwitcherUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28823E7C2B28214E0059CA93 /* Debug */,
+				28823E7D2B28214E0059CA93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 28823E492B28214D0059CA93 /* Project object */;
+}
