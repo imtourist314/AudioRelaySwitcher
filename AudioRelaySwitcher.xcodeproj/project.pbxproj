@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		283FD2332B313E3800C316C4 /* CreateEndPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283FD2322B313E3800C316C4 /* CreateEndPointView.swift */; };
+		283FD2352B3142B200C316C4 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283FD2342B3142B200C316C4 /* EndPoint.swift */; };
+		287CE68F2B37CF410062D083 /* Relay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287CE68E2B37CF410062D083 /* Relay.swift */; };
 		28823E552B28214D0059CA93 /* AudioRelaySwitcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823E542B28214D0059CA93 /* AudioRelaySwitcherApp.swift */; };
 		28823E572B28214D0059CA93 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28823E562B28214D0059CA93 /* ContentView.swift */; };
 		28823E592B28214E0059CA93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28823E582B28214E0059CA93 /* Assets.xcassets */; };
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		283FD2322B313E3800C316C4 /* CreateEndPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEndPointView.swift; sourceTree = "<group>"; };
+		283FD2342B3142B200C316C4 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		287CE68E2B37CF410062D083 /* Relay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Relay.swift; sourceTree = "<group>"; };
 		28823E512B28214D0059CA93 /* AudioRelaySwitcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioRelaySwitcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28823E542B28214D0059CA93 /* AudioRelaySwitcherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRelaySwitcherApp.swift; sourceTree = "<group>"; };
 		28823E562B28214D0059CA93 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,8 +105,11 @@
 				28823E542B28214D0059CA93 /* AudioRelaySwitcherApp.swift */,
 				28823E562B28214D0059CA93 /* ContentView.swift */,
 				28823E802B2823CD0059CA93 /* SettingsView.swift */,
+				283FD2342B3142B200C316C4 /* EndPoint.swift */,
+				283FD2322B313E3800C316C4 /* CreateEndPointView.swift */,
 				28823E582B28214E0059CA93 /* Assets.xcassets */,
 				28823E5A2B28214E0059CA93 /* Preview Content */,
+				287CE68E2B37CF410062D083 /* Relay.swift */,
 			);
 			path = AudioRelaySwitcher;
 			sourceTree = "<group>";
@@ -260,8 +269,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				283FD2352B3142B200C316C4 /* EndPoint.swift in Sources */,
+				283FD2332B313E3800C316C4 /* CreateEndPointView.swift in Sources */,
 				28823E812B2823CD0059CA93 /* SettingsView.swift in Sources */,
 				28823E572B28214D0059CA93 /* ContentView.swift in Sources */,
+				287CE68F2B37CF410062D083 /* Relay.swift in Sources */,
 				28823E552B28214D0059CA93 /* AudioRelaySwitcherApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

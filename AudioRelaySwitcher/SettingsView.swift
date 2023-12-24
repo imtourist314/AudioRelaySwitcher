@@ -6,104 +6,90 @@
 //
 
 import SwiftUI
+import SwiftData
 
-struct EndPoint:Identifiable {
-    let id=UUID();
-    var name:String;
-    var url:String;
-    var type:String;
-    var desc:String;
-}
-
+// Screen to see the endpoints and then within that the
+// the range of relays patterns for each one
 struct SettingsView: View {
-    @State private var isShowingAddEndpoint = false;
-    @State private var name:String = "";
-    @State var newEndPoint:EndPoint = EndPoint(name:"Switcher1",url:"http://www1",type:"Switcher",desc:"blahbah");
-    var endPoints:[EndPoint] = [];
-    var xxendPoints:[EndPoint] = [
-        EndPoint(name:"Switcher1",url:"http://www1",type:"Switcher",desc:"blahbah"),
-        EndPoint(name:"Switcher2",url:"http://www2",type:"Switcher2",desc:"zzzz")
-    ];
-        //UserDefaults.standard..array(forKey:"endPoints")
+    @Environment(\.dismiss) private var dismiss;
+    @Environment(\.modelContext) private var modelContext;
+    @State private var showAddEndPoint = false;
+    @State private var showRelayPatterns = false;
+    @Query var endPoints:[EndPoint]
+    @State var relayMaps:Dictionary<String,[Relay]>
+    @State var selectedEndpoint:EndPoint?
+    
     var body: some View {
-        NavigationView {
-            VStack(alignment: .leading) {
-                if ( endPoints.isEmpty ) {
-                    Text("No endpoints");
-                    Button(){
-                        withAnimation{
-                            isShowingAddEndpoint.toggle();
-                        }
-                    } label: {
-                        Text("Add")
-                            .frame(width:200,height:40)
-                            .background(Color.green)
-                            .foregroundColor(Color.black)
-                            .cornerRadius(3.0)
-                    }
-                    
-                    if ( isShowingAddEndpoint ){
-                        Section(header:Text("Add"),footer:Text("footer")){
-                            VStack(){
-                                Form {
-                                    TextField("Name",text:$newEndPoint.name);
-                                    TextField("Url",text:$newEndPoint.url);
-                                    TextField("Type",text:$newEndPoint.type);
-                                    TextField("Desc",text:$newEndPoint.desc);
-                                }
+        NavigationStack() {
+            VStack(alignment:.leading,spacing:10){
+                
+                
+                Text("Relay Endpoints")
+                    .toolbar {
+                        ToolbarItem(placement:.topBarLeading) {
+                            Button("Cancel"){
+                                dismiss()
                             }
+                        };
+                        ToolbarItem {
+                            Button(action:{
+                                showAddEndPoint.toggle()
+                            }, label:{
+                                Label("Add Item",systemImage: "plus")
+                            })
                         }
                     }
-                    
-                } else {
-                    List {
-                        ForEach(endPoints){ endPoint in
-                            Text("Endpoint \(endPoint.name)");
+                    .sheet(isPresented: $showAddEndPoint, content: {
+                        NavigationStack {
+                            CreateEndPointView()
                         }
+                        .presentationDetents([.medium])
+                    })
+                
+                // list of the endpoints
+                    // List the endpoints here
+                List(selection:$selectedEndpoint){
+                    ForEach(endPoints){ endPoint in
+                        Text(endPoint.name)
+                            .onTapGesture {
+                                selectedEndpoint = endPoint
+                            }
                     }
                 }
                 
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading){
-                    XMarkButton();
+                Divider()
+                
+                // TODO: once clicking on an endpoint display the relay pattern here
+                if ( selectedEndpoint != nil ){
+                    Text("Selected \(selectedEndpoint!.name)")
+                } else {
+                    Text("Nothing selected")
                 }
-                ToolbarItem(placement: .navigationBarLeading){
-                    Text("Settings").bold().frame(maxWidth:.infinity,alignment:.trailing);
-                }
+                
+                Spacer()
+                /*
+                      var data = RelayMaps[endpointName]
+                      ForEach(data){ relay in
+                        Text(relay.name, relay.pin, relay.state)
+                    }
+                 */
+                
             }
-            
-            /*
-            List {
-                Section(header:Text("Target Device Address"), footer:Text("footer")){
-                    Text("hi1")
-                    Text("hi2")
-                    Text("hi3")
-                }
-            }
-            .listStyle(GroupedListStyle())
-            .navigationTitle("Settings")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading){
-                    XMarkButton()
-                }
-            }
-             */
+            Spacer()
+            Text("At the bottom")
         }
     }
-}
-
-struct XMarkButton:View{
-    @Environment(\.presentationMode) var presentationMode
-    var body:some View {
-        Button(action:{
-            presentationMode.wrappedValue.dismiss()
-        },label:{
-            Image(systemName:"xmark").font(.headline)
-        })
+    
+    func createEmptyRelayArray(endpointName:String){
+        var newRelays:[Relay] = (1...8).map { idx in
+            let elem = Relay.init(relayName: "Pin\(idx)", pinNumber: idx, state: false)
+            newRelays[idx] = elem;
+        }
+        relayMaps[selectedEndpoint!.name] = newRelays;
     }
 }
 
 #Preview {
     SettingsView()
+        .modelContainer(for:[EndPoint.self,Relay.self])
 }

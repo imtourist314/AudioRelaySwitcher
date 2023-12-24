@@ -95,4 +95,5 @@ extension ContentView {
 
 #Preview {
     ContentView()
+        .modelContainer(for:[EndPoint.self,Relay.self])
 }
