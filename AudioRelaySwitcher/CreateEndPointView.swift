@@ -11,7 +11,7 @@ import SwiftData
 struct CreateEndPointView: View {
     @Environment(\.dismiss) var dismiss;
     @Environment(\.modelContext) var modelContext;
-    @State var endPoint:EndPoint = EndPoint.init(name:"",url:"",type:"",desc:"");
+    @State var endPoint:EndPoint = EndPoint.init(name:"",url:"",type:"X8",desc:"");
     
     var acceptedTypes = ["Relay X8","Relay X4","Relay X2","Relay X1"]
     
@@ -51,6 +51,7 @@ struct CreateEndPointView: View {
             ToolbarItem(placement:.navigationBarTrailing){
                 Button("Save"){
                     modelContext.insert(endPoint)
+                    createRelays()
                     dismiss()
                 }
             }
@@ -63,9 +64,17 @@ struct CreateEndPointView: View {
         .navigationBarBackButtonHidden()
         .navigationBarTitleDisplayMode(.inline)
     }
+    
+    func createRelays(){
+        print("Callining create relays for new endpoint \(endPoint.name) of type \(endPoint.type) with url: \(endPoint.url)")
+        (0...7).map { idx in
+            endPoint.relays.append(Relay.init(relayName: "Relay\(idx)", pinNumber: idx, state: false))
+        }
+        print("Appended \(endPoint.relays.count) relays to endpoint: \(endPoint.name)")
+    }
 }
 
 #Preview {
     CreateEndPointView()
-        .modelContainer(for:[EndPoint.self])
+        .modelContainer(for:[EndPoint.self,Relay.self])
 }

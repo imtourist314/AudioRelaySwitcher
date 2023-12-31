@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
     @State private var toggleValue = 1
     @State private var showSettingsView:Bool = false
+    @Query var endPoints:[EndPoint]
+    @State var selectedEndpoint:EndPoint?
 
     var body: some View {
         ZStack {
@@ -21,10 +24,21 @@ struct ContentView: View {
                 // header at the top of the screen
                 homeHeader
                 
+                List(selection:$selectedEndpoint){
+                    ForEach(endPoints){ endPoint in
+                        Text(endPoint.name)
+                            .onTapGesture {
+                                selectedEndpoint = endPoint
+                                doSomethingToAll()
+                            }
+                    }
+                }
+                
                 HStack{
                     Image(systemName: "globe")
                         .imageScale(.large)
                         .foregroundStyle(.tint)
+                    
 
                     Text("Current: Rotel").font(.system(size:32,weight:.medium,design:.default))
                         .foregroundColor(.black)
@@ -59,6 +73,14 @@ struct ContentView: View {
             .padding()
         }
     }
+    
+    func doSomethingToAll(){
+        ForEach(selectedEndpoint!.relays){ relay in
+            print("for toggle \(relay.relayName) to \(relay.state)")
+            //let url = URL(string:"http://192.168.0.209/cmd?cb=cboutputPin0&v="+String(relay.state))!
+            //callUrl(url)
+        }
+    }
 
     func doSomething() {
         print("Now doing something")
@@ -70,6 +92,10 @@ struct ContentView: View {
         }
         print("Making URL requests here!! \(toggleValue)")
         let url = URL(string:"http://192.168.0.209/cmd?cb=cboutputPin0&v="+String(toggleValue))!
+        callUrl(url:url)
+    }
+    
+    func callUrl(url:URL){
         var urlRequest = URLRequest(url:url)
         urlRequest.httpMethod = "GET"
         urlRequest.addValue("no-cache",forHTTPHeaderField: "cache-control")
@@ -95,5 +121,5 @@ extension ContentView {
 
 #Preview {
     ContentView()
-        .modelContainer(for:[EndPoint.self,Relay.self])
+        .modelContainer(for:[EndPoint.self])
 }

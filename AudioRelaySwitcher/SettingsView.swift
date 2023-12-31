@@ -16,11 +16,10 @@ struct SettingsView: View {
     @State private var showAddEndPoint = false;
     @State private var showRelayPatterns = false;
     @Query var endPoints:[EndPoint]
-    @State var relayMaps:Dictionary<String,[Relay]>
     @State var selectedEndpoint:EndPoint?
     
     var body: some View {
-        NavigationStack() {
+        let stack = NavigationStack() {
             VStack(alignment:.leading,spacing:10){
                 
                 
@@ -40,6 +39,7 @@ struct SettingsView: View {
                         }
                     }
                     .sheet(isPresented: $showAddEndPoint, content: {
+                        // if above + is clicked then show the dialog to allow for addition of end point
                         NavigationStack {
                             CreateEndPointView()
                         }
@@ -55,41 +55,47 @@ struct SettingsView: View {
                                 selectedEndpoint = endPoint
                             }
                     }
+                    .onDelete(perform: deleteEndpoint)
                 }
                 
                 Divider()
                 
-                // TODO: once clicking on an endpoint display the relay pattern here
+                //if ( selectedEndpoint != nil && createEmptyRelayArray(endpointName: selectedEndpoint!.name) ){
                 if ( selectedEndpoint != nil ){
-                    Text("Selected \(selectedEndpoint!.name)")
+                    List(){
+                        Section{
+                            Text("\(selectedEndpoint!.name)/Number of relays: \(selectedEndpoint!.relays.count)")
+                        }
+                        Section {
+                            // ForEach($selectedEndpoint!.relays.sorted(by:{$0.relayName<$1.relayName})){ relay in
+                            ForEach(selectedEndpoint!.relays){ relay in
+                                Toggle(isOn:Bindable(relay).state){
+                                    Text("\(relay.relayName) \(relay.pinNumber)")
+                                }
+                            }
+                        }
+                    }
                 } else {
                     Text("Nothing selected")
                 }
-                
-                Spacer()
-                /*
-                      var data = RelayMaps[endpointName]
-                      ForEach(data){ relay in
-                        Text(relay.name, relay.pin, relay.state)
-                    }
-                 */
                 
             }
             Spacer()
             Text("At the bottom")
         }
+        
+        return stack
     }
     
-    func createEmptyRelayArray(endpointName:String){
-        var newRelays:[Relay] = (1...8).map { idx in
-            let elem = Relay.init(relayName: "Pin\(idx)", pinNumber: idx, state: false)
-            newRelays[idx] = elem;
+    func deleteEndpoint( indexSet:IndexSet){
+        for index in indexSet {
+            let endPoint = endPoints[index]
+            modelContext.delete(endPoint)
         }
-        relayMaps[selectedEndpoint!.name] = newRelays;
     }
 }
 
 #Preview {
     SettingsView()
-        .modelContainer(for:[EndPoint.self,Relay.self])
+        .modelContainer(for:[EndPoint.self])
 }
