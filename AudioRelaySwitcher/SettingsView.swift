@@ -68,7 +68,7 @@ struct SettingsView: View {
                         }
                         Section {
                             // ForEach($selectedEndpoint!.relays.sorted(by:{$0.relayName<$1.relayName})){ relay in
-                            ForEach(selectedEndpoint!.relays){ relay in
+                            ForEach(selectedEndpoint!.relays.sorted(by:{$0.relayName<$1.relayName})){ relay in
                                 Toggle(isOn:Bindable(relay).state){
                                     Text("\(relay.relayName) \(relay.pinNumber)")
                                 }

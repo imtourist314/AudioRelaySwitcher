@@ -75,10 +75,14 @@ struct ContentView: View {
     }
     
     func doSomethingToAll(){
-        ForEach(selectedEndpoint!.relays){ relay in
-            print("for toggle \(relay.relayName) to \(relay.state)")
-            //let url = URL(string:"http://192.168.0.209/cmd?cb=cboutputPin0&v="+String(relay.state))!
-            //callUrl(url)
+        selectedEndpoint!.relays.forEach{ relay in
+            var state:String = "0"
+            if ( relay.state ){
+                state = "1"
+            }
+            let url = URL(string:"http://192.168.0.209/cmd?cb=cboutputPin"+String(relay.pinNumber)+"&v="+state)!
+            callUrl(url:url)
+            Thread.sleep(forTimeInterval: 0.1)
         }
     }
 
@@ -96,6 +100,7 @@ struct ContentView: View {
     }
     
     func callUrl(url:URL){
+        print("Call to url: "+url.absoluteString)
         var urlRequest = URLRequest(url:url)
         urlRequest.httpMethod = "GET"
         urlRequest.addValue("no-cache",forHTTPHeaderField: "cache-control")
