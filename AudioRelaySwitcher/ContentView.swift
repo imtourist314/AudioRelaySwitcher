@@ -16,61 +16,47 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors:[.gray,.white]),
+            LinearGradient(gradient: Gradient(colors:[.white,.gray]),
                            startPoint: .topLeading,endPoint:.bottomTrailing)
             .edgesIgnoringSafeArea(.all)
             
-            VStack {
+            VStack(spacing:10) {
                 // header at the top of the screen
                 homeHeader
                 
                 List(selection:$selectedEndpoint){
                     ForEach(endPoints){ endPoint in
-                        Text(endPoint.name)
+                        Text("\(endPoint.name) (\(endPoint.type))")
                             .onTapGesture {
                                 selectedEndpoint = endPoint
-                                doSomethingToAll()
                             }
                     }
                 }
                 
-                HStack{
-                    Image(systemName: "globe")
-                        .imageScale(.large)
-                        .foregroundStyle(.tint)
+                Section {
+                    if ( selectedEndpoint != nil ){
+                        Text("\(selectedEndpoint!.name) \(selectedEndpoint!.desc)")
+                    } else {
+                        Text("Please Select")
+                    }
+                    Button(){
+                        doSomethingToAll()
+                    } label :{
+                        Text("Invoke")
+                            .frame(width:200,height:40)
+                            .background(.green)
+                            .foregroundColor(.white)
+                            .cornerRadius(3)
+                    }
                     
-
-                    Text("Current: Rotel").font(.system(size:32,weight:.medium,design:.default))
-                        .foregroundColor(.black)
-                        .padding()
                 }
-                .padding(.bottom,40)
-
-                Text("Toggle").font(.system(size:24,weight:.medium))
-
-                Button(){
-                   doSomething()
-                } label: {
-                    Text("Rotel")
-                        .frame(width:200,height:40)
-                        .background(Color.green)
-                        .foregroundColor(Color.black)
-                        .cornerRadius(3.0)
-                }
-                Button(){
-                   doSomething()
-                } label: {
-                    Text("Sansui").frame(width:200,height:40)
-                        .background(Color.blue)
-                        .foregroundColor(Color.white)
-                        .cornerRadius(3.0)
-                }
-                Spacer()
+                
+            .padding()
             }
+            .frame(width:400).background(.orange)
             .sheet(isPresented: $showSettingsView, content: {
                 SettingsView()
             })
-            .padding()
         }
     }
     
