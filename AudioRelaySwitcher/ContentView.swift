@@ -16,44 +16,56 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors:[.white,.gray]),
-                           startPoint: .topLeading,endPoint:.bottomTrailing)
-            .edgesIgnoringSafeArea(.all)
-            
-            VStack(spacing:10) {
+            //LinearGradient(gradient: Gradient(colors:[.white,.gray]),startPoint:.topLeading,endPoint:.bottomTrailing).edgesIgnoringSafeArea(.all)
+            VStack() {
                 // header at the top of the screen
-                homeHeader
-                
-                List(selection:$selectedEndpoint){
-                    ForEach(endPoints){ endPoint in
-                        Text("\(endPoint.name) (\(endPoint.type))")
-                            .onTapGesture {
-                                selectedEndpoint = endPoint
-                            }
-                    }
-                }
-                
-                Section {
-                    if ( selectedEndpoint != nil ){
-                        Text("\(selectedEndpoint!.name) \(selectedEndpoint!.desc)")
-                    } else {
-                        Text("Please Select")
-                    }
+        //        homeHeader
+                HStack {
                     Button(){
-                        doSomethingToAll()
-                    } label :{
-                        Text("Invoke")
-                            .frame(width:200,height:40)
-                            .background(.green)
-                            .foregroundColor(.white)
-                            .cornerRadius(3)
+                        showSettingsView.toggle()
+                    } label: {
+                        Text("Settings")
                     }
-                    
+                    .frame(alignment: .leading)
                 }
                 
-            .padding()
+                List(endPoints,selection:$selectedEndpoint){ endPoint in
+                    Text("\(endPoint.name) (\(endPoint.type))")
+                         .onTapGesture {
+                            selectedEndpoint = endPoint
+                         }
+                }
+                .border(.red)
+                .background(.yellow)
+                .frame(height:400)
+                
+                Divider()
+                
+                if ( selectedEndpoint != nil ){
+                   Text("Selected: \(selectedEndpoint!.name) \(selectedEndpoint!.desc)")
+                       .padding()
+                       .border(.green)
+                } else {
+                   Text("Please Select")
+                       .padding()
+                       .border(.green)
+                }
+                
+                Spacer()
+                Divider()
+                
+                Button(){
+                    doSomethingToAll()
+                } label :{
+                    Text("Invoke")
+                        .frame(width:200,height:40)
+                        .background(.green)
+                        .foregroundColor(.white)
+                        .cornerRadius(6)
+                        .disabled(false)
+                }
             }
-            .frame(width:400).background(.orange)
+            .frame(width:400,alignment:.topLeading).background(.orange)
             .sheet(isPresented: $showSettingsView, content: {
                 SettingsView()
             })
@@ -105,7 +117,7 @@ extension ContentView {
             } label: {
                 Text("Settings")
             }
-            Spacer()
+            .frame(alignment: .leading)
         }
     }
 }
