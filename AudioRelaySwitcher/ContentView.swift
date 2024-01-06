@@ -13,6 +13,7 @@ struct ContentView: View {
     @State private var showSettingsView:Bool = false
     @Query var endPoints:[EndPoint]
     @State var selectedEndpoint:EndPoint?
+    @State var isAnimating = false
 
     var body: some View {
         ZStack {
@@ -26,29 +27,25 @@ struct ContentView: View {
                     } label: {
                         Text("Settings")
                     }
-                    .frame(alignment: .leading)
+                    .frame(maxWidth:.infinity,alignment: .leading)
+                    .padding(.leading,8)
                 }
                 
                 List(endPoints,selection:$selectedEndpoint){ endPoint in
-                    Text("\(endPoint.name) (\(endPoint.type))")
+                    Text("\(endPoint.name)")
                          .onTapGesture {
                             selectedEndpoint = endPoint
                          }
                 }
-                .border(.red)
-                .background(.yellow)
-                .frame(height:400)
+                .frame(maxHeight:400)
                 
                 Divider()
                 
                 if ( selectedEndpoint != nil ){
-                   Text("Selected: \(selectedEndpoint!.name) \(selectedEndpoint!.desc)")
-                       .padding()
-                       .border(.green)
+                    endPointDetails()
                 } else {
-                   Text("Please Select")
+                   Text("Select End Point")
                        .padding()
-                       .border(.green)
                 }
                 
                 Spacer()
@@ -65,7 +62,7 @@ struct ContentView: View {
                         .disabled(false)
                 }
             }
-            .frame(width:400,alignment:.topLeading).background(.orange)
+            .frame(alignment:.topLeading)
             .sheet(isPresented: $showSettingsView, content: {
                 SettingsView()
             })
@@ -106,6 +103,48 @@ struct ContentView: View {
             (data,response,error) in
             // do something
         }.resume()
+    }
+    
+    func endPointDetails() -> some View {
+        return VStack() {
+            HStack(spacing:20) {
+                Color.gray
+                    .shadow(color:.primary,radius:0,x:2,y:2)
+                    .overlay {
+                        TextAnimate(text: selectedEndpoint!.name)
+                        .padding(.leading,5)
+                        
+                        Text(selectedEndpoint!.type)
+                            .textFieldStyle(.roundedBorder)
+                            .frame(maxWidth:.infinity,alignment:.trailing)
+                            .padding(.trailing,5)
+                    }
+            }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,maxHeight: 40)
+                .padding(10)
+            Text(selectedEndpoint!.url)
+                    .textFieldStyle(.roundedBorder)
+                    .frame(maxWidth:.infinity,alignment:.leading)
+                    .padding(.leading,5)
+           Text(selectedEndpoint!.desc)
+                    .textFieldStyle(.roundedBorder)
+                    .frame(maxWidth:.infinity,alignment:.leading)
+                    .padding(.leading,5)
+            
+        }
+        .animation(.easeIn(duration: 2.5), value: false)
+    }
+    
+    func TextAnimate(text:String) -> some View {
+        return Text(text)
+                    .font(.title)
+                    .opacity(isAnimating ? 1.0 : 0.0)
+                    .animation(.easeIn(duration: 0.5), value: isAnimating)
+                    .onAppear { isAnimating = true }
+//                    .foregroundStyle(
+ //                       Color.white.shadow(
+  //                          .inner(color: .black, radius: 1, x: 0, y: 2)
+   //                     )
+//                    )
     }
 }
 

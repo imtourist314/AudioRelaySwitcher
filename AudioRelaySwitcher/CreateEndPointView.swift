@@ -11,7 +11,7 @@ import SwiftData
 struct CreateEndPointView: View {
     @Environment(\.dismiss) var dismiss;
     @Environment(\.modelContext) var modelContext;
-    @State var endPoint:EndPoint = EndPoint.init(name:"",url:"",type:"X8",desc:"");
+    @State var endPoint:EndPoint = EndPoint.init()
     
     var acceptedTypes = ["Relay X8","Relay X4","Relay X2","Relay X1"]
     
