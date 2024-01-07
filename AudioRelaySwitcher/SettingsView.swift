@@ -22,7 +22,6 @@ struct SettingsView: View {
         let stack = NavigationStack() {
             VStack(alignment:.leading,spacing:10){
                 
-                
                 Text("Relay Endpoints")
                     .toolbar {
                         ToolbarItem(placement:.topBarLeading) {
@@ -44,7 +43,8 @@ struct SettingsView: View {
                             CreateEndPointView()
                         }
                         .presentationDetents([.medium])
-                    })
+                })
+                
                 
                 // list of the endpoints
                     // List the endpoints here
@@ -57,21 +57,22 @@ struct SettingsView: View {
                     }
                     .onDelete(perform: deleteEndpoint)
                 }
+                .frame(maxHeight:250)
                 
                 Divider()
                 
                 //if ( selectedEndpoint != nil && createEmptyRelayArray(endpointName: selectedEndpoint!.name) ){
                 if ( selectedEndpoint != nil ){
-                    List(){
+                    VStack(){
                         Section{
                             Text("\(selectedEndpoint!.name)/Number of relays: \(selectedEndpoint!.relays.count)")
-                        }
-                        Section {
                             // ForEach($selectedEndpoint!.relays.sorted(by:{$0.relayName<$1.relayName})){ relay in
+                            List{
                             ForEach(selectedEndpoint!.relays.sorted(by:{$0.relayName<$1.relayName})){ relay in
                                 Toggle(isOn:Bindable(relay).state){
-                                    Text("\(relay.relayName) \(relay.pinNumber)")
+                                    Text("\(relay.relayName)")
                                 }
+                            }
                             }
                         }
                     }
@@ -81,7 +82,6 @@ struct SettingsView: View {
                 
             }
             Spacer()
-            Text("At the bottom")
         }
         
         return stack
