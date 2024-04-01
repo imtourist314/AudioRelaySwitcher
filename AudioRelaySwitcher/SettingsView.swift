@@ -51,6 +51,7 @@ struct SettingsView: View {
                 List(selection:$selectedEndpoint){
                     ForEach(endPoints){ endPoint in
                         Text(endPoint.name)
+                            .listRowBackground((endPoint.name=="Sansui") ? Color.red: Color.green)
                             .onTapGesture {
                                 selectedEndpoint = endPoint
                             }

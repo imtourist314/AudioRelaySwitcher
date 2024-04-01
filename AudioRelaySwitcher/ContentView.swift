@@ -37,7 +37,7 @@ struct ContentView: View {
                             selectedEndpoint = endPoint
                          }
                 }
-                .frame(maxHeight:400)
+                .frame(maxHeight:300)
                 
                 Divider()
                 
